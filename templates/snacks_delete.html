@@ -1,5 +1,12 @@
-{%extends 'base.html'%}
+{% extends 'base.html' %}
 
-{%block content%}
-<h2>Coming soon</h2>
-{%end content%}
+{% block content %}
+<h2>Delete Snack</h2>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <p>Do you really want to delete "{{ snacks.name}}"" ?</p>
+  <input type="submit" value="OK">
+</form>
+{% endblock content %}
