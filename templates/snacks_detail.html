@@ -1,5 +1,11 @@
-{%extends 'base.html'%}
+{% extends 'base.html' %}
 
-{%block content%}
-<h2>Coming soon</h2>
-{%end content%}
+{% block content %}
+<h2> Name of the Snack{{ snacks.name }}</h2>
+<h2>purchaser:{{ snacks.purchase }}</h2>
+<h2>Description:{{snacks.description}}</h2>
+<a href="{% url 'snacks_update' snacks.pk %}"> Update snack</a>
+<a href="{% url 'snacks_delete' snacks.pk %}"> Delete Snack</a>
+<a href="{% url 'snacks_list' %}"> Go Home</a>
+
+{% endblock content %}
